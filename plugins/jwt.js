@@ -3,7 +3,7 @@ const configuration = require('../config/configuration')
 
 module.exports = fp(function (fastify, opts, done) {
 
-    fastify.register(require('fastify-jwt'), {
+    fastify.register(require('@fastify/jwt'), {
         secret: configuration.secretKey
     })
 

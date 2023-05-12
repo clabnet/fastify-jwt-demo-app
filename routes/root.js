@@ -11,12 +11,6 @@ module.exports = async function (fastify, opts) {
         }
     )
 
-    fastify.post('/signup', (req, reply) => {
-        // some code
-        const token = fastify.jwt.sign({ "username": "Adam Smith" })
-        reply.send({ token })
-    })
-
     fastify.get(
         "/protected",
         {
@@ -26,4 +20,10 @@ module.exports = async function (fastify, opts) {
             return request.user
         }
     )
+
+    fastify.post('/signup', (req, reply) => {
+        // some code
+        const token = fastify.jwt.sign({ "username": "Claudio Barca" })
+        reply.send({ token })
+    })
 }
